@@ -19,8 +19,8 @@
 		},
 		{
 			icon: `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2l2.09 6.26H20l-5.45 3.96 2.09 6.26L11 14.52l-5.64 3.96 2.09-6.26L2 8.26h6.91L11 2z" stroke="#D4A017" stroke-width="1.4" stroke-linejoin="round"/></svg>`,
-			title: '{{ ANOS_EXPERIENCIA }} anos de experiência',
-			desc: 'Especialização dedicada exclusivamente à prótese capilar masculina.'
+			title: 'Primeiro em Santo André',
+			desc: 'Pioneiro na aplicação de prótese capilar na cidade, com anos de bagagem em corte de cabelo e barba.'
 		}
 	];
 </script>

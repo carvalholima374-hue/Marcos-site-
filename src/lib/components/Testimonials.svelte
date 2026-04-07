@@ -80,19 +80,19 @@
 </script>
 
 <section
-	class="bg-[#0A0A0A] py-20 lg:py-24"
+	class="bg-bg-primary py-20 lg:py-24"
 	aria-label="Depoimentos de clientes"
 >
 	<!-- Heading -->
 	<div class="max-w-6xl mx-auto px-6 mb-14" use:reveal>
 		<h2
-			class="font-display text-3xl lg:text-4xl font-bold text-[#F5F5F5] text-center"
+			class="font-display text-3xl lg:text-4xl font-bold text-text-primary text-center"
 			style="font-family: 'Playfair Display', Georgia, serif;"
 		>
-			O que nossos clientes dizem
+			O que os clientes dizem
 		</h2>
 		<p
-			class="mt-3 text-sm text-[#A0A0A0] text-center"
+			class="mt-3 text-sm text-text-secondary text-center"
 			style="font-family: 'DM Sans', system-ui, sans-serif;"
 		>
 			Resultados reais de clientes reais
@@ -122,6 +122,7 @@
 					aria-live="off"
 				>
 					{#each items as item, i}
+						<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 						<article
 							class="testimonial-card"
 							tabindex="0"

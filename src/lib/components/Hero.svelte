@@ -7,7 +7,7 @@
 </script>
 
 <section
-	class="relative min-h-screen flex items-center bg-[#0A0A0A] overflow-hidden"
+	class="relative min-h-screen flex items-center bg-bg-primary overflow-hidden"
 	aria-label="Apresentação principal"
 >
 	<!-- SVG noise texture -->
@@ -20,32 +20,32 @@
 	</svg>
 
 	<!-- Subtle horizontal line accent -->
-	<div class="absolute top-0 left-0 right-0 h-px bg-[#D4A017] opacity-40" aria-hidden="true"></div>
+	<div class="absolute top-0 left-0 right-0 h-px bg-accent opacity-40" aria-hidden="true"></div>
 
-	<div class="relative z-10 w-full max-w-6xl mx-auto px-6 py-20 lg:py-0">
+	<div class="relative z-10 w-full max-w-6xl mx-auto px-6 pt-12 pb-20 lg:py-0">
 		<div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen lg:min-h-0 lg:py-24">
 
 			<!-- Left: copy -->
 			<div use:reveal={{ delay: 0 }}>
 				<!-- Badge -->
-				<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2A2A2A] bg-[#111111] mb-8">
-					<span class="w-1.5 h-1.5 rounded-full bg-[#D4A017] flex-shrink-0" aria-hidden="true"></span>
-					<span class="text-xs font-medium text-[#A0A0A0] tracking-wide uppercase">
+				<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-bg-secondary mb-8">
+					<span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0" aria-hidden="true"></span>
+					<span class="text-xs font-medium text-text-secondary tracking-wide uppercase">
 						Atendimento presencial · Santo André/SP
 					</span>
 				</div>
 
 				<!-- H1 -->
 				<h1
-					class="font-display text-5xl lg:text-6xl xl:text-7xl font-bold text-[#F5F5F5] leading-tight mb-6"
+					class="font-display text-5xl lg:text-6xl xl:text-7xl font-bold text-text-primary leading-tight mb-6"
 					style="font-family: 'Playfair Display', Georgia, serif;"
 				>
-					Recupere seu<br />cabelo — e sua<br />
-					<em class="text-[#D4A017] not-italic">confiança.</em>
+					Recupere seu<br />cabelo e sua<br />
+					<em class="text-accent not-italic">confiança.</em>
 				</h1>
 
 				<!-- Subtitle -->
-				<p class="text-lg lg:text-xl text-[#A0A0A0] leading-relaxed mb-10 max-w-md">
+				<p class="text-lg lg:text-xl text-text-secondary leading-relaxed mb-10 max-w-md">
 					Prótese capilar 100% natural. Sem cirurgia, sem dor,
 					resultado no mesmo dia.
 				</p>
@@ -57,7 +57,7 @@
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Agendar avaliação gratuita pelo WhatsApp"
-						class="cta-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#D4A017] text-[#0A0A0A] font-semibold text-base rounded-sm transition-all duration-200 hover:bg-[#F0B429] hover:scale-[1.02] active:scale-100"
+						class="cta-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-bg-primary font-semibold text-base rounded-sm transition-all duration-200 hover:bg-accent-hover hover:scale-[1.02] active:scale-100"
 					>
 						Agendar avaliação gratuita
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -66,7 +66,7 @@
 					</a>
 				</div>
 
-				<p class="mt-4 text-sm text-[#A0A0A0]">
+				<p class="mt-4 text-sm text-text-secondary">
 					Avaliação 100% gratuita e sem compromisso
 				</p>
 			</div>
@@ -74,7 +74,7 @@
 			<!-- Right: photo placeholder -->
 			<div use:reveal={{ delay: 150 }} class="order-first lg:order-last">
 				<div
-					class="relative w-full max-w-sm mx-auto lg:max-w-none border-2 border-dashed border-[#2A2A2A] rounded-sm flex flex-col items-center justify-center bg-[#111111] text-[#A0A0A0]"
+					class="relative w-full max-w-sm mx-auto lg:max-w-none border-2 border-dashed border-border rounded-sm flex flex-col items-center justify-center bg-bg-secondary text-text-secondary"
 					style="aspect-ratio: 4/5;"
 					aria-label="Foto de resultado — substituir pela foto real"
 				>

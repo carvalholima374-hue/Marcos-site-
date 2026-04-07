@@ -38,11 +38,11 @@
 				</h2>
 
 				<p class="text-[#A0A0A0] leading-relaxed text-base lg:text-lg">
-					<!-- bio do Marcos aqui -->
-					Com anos de dedicação exclusiva à prótese capilar masculina, o Marcos
-					desenvolveu uma técnica precisa que garante naturalidade, durabilidade
-					e conforto para cada cliente. Cada atendimento é personalizado, porque
-					cada cabeça é única — e cada transformação merece cuidado total.
+					Com anos de experiência em corte de cabelo e barba, o Marcos chegou
+					à prótese capilar com um olhar apurado para proporção, estilo e
+					naturalidade — e foi o primeiro profissional a oferecer esse serviço
+					em Santo André. Cada atendimento é personalizado, porque cada cabeça
+					é única — e cada transformação merece cuidado total.
 				</p>
 			</div>
 
