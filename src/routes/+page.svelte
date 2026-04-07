@@ -4,6 +4,7 @@
 	import Solution from '$lib/components/Solution.svelte';
 	import Differentials from '$lib/components/Differentials.svelte';
 	import BeforeAfter from '$lib/components/BeforeAfter.svelte';
+	import Testimonials from '$lib/components/Testimonials.svelte';
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
 	import About from '$lib/components/About.svelte';
 	import FAQ from '$lib/components/FAQ.svelte';
@@ -17,6 +18,7 @@
 	<Solution />
 	<Differentials />
 	<BeforeAfter />
+	<Testimonials />
 	<HowItWorks />
 	<About />
 	<FAQ />
