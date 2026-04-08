@@ -83,19 +83,23 @@
 						class="w-full h-full object-cover"
 					/>
 					<!-- Edge fade: top -->
-					<div class="absolute inset-x-0 top-0 h-20 pointer-events-none  border-white bg-linear-to-b from-bg-primary to-transparent from-20%"
+					<div class="absolute inset-x-0 top-0 h-20 pointer-events-none"
+						style="background: linear-gradient(to bottom, var(--color-bg-primary), transparent);"
 						aria-hidden="true"
 					></div>
 					<!-- Edge fade: bottom -->
-					<div class="absolute inset-x-0 bottom-0 h-20 pointer-events-none  border-white bg-linear-to-t from-bg-primary to-transparent from-20%"
+					<div class="absolute inset-x-0 bottom-0 h-20 pointer-events-none"
+						style="background: linear-gradient(to top, var(--color-bg-primary), transparent);"
 						aria-hidden="true"
 					></div>
 					<!-- Edge fade: left -->
-					<div class="absolute inset-y-0 left-0 w-20 pointer-events-none  border-white bg-linear-to-r from-bg-primary to-transparent from-20%"
+					<div class="absolute inset-y-0 left-0 w-20 pointer-events-none"
+						style="background: linear-gradient(to right, var(--color-bg-primary), transparent);"
 						aria-hidden="true"
 					></div>
 					<!-- Edge fade: right -->
-					<div class="absolute inset-y-0 right-0 w-20 pointer-events-none  border-white bg-linear-to-l from-bg-primary to-transparent from-20%"
+					<div class="absolute inset-y-0 right-0 w-20 pointer-events-none"
+						style="background: linear-gradient(to left, var(--color-bg-primary), transparent);"
 						aria-hidden="true"
 					></div>
 				</div>
