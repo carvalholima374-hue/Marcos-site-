@@ -71,20 +71,33 @@
 				</p>
 			</div>
 
-			<!-- Right: photo placeholder -->
-			<div use:reveal={{ delay: 150 }} class="order-first lg:order-last">
+			<!-- Right: photo -->
+			<div use:reveal={{ delay: 150 }} class="order-first lg:order-last bg-bg-primary">
 				<div
-					class="relative w-full max-w-sm mx-auto lg:max-w-none border-2 border-dashed border-border rounded-sm flex flex-col items-center justify-center bg-bg-secondary text-text-secondary"
+					class="relative w-full max-w-sm mx-auto lg:max-w-none overflow-hidden rounded-sm"
 					style="aspect-ratio: 4/5;"
-					aria-label="Foto de resultado — substituir pela foto real"
 				>
-					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="mb-3 opacity-40" aria-hidden="true">
-						<rect x="5" y="8" width="30" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
-						<circle cx="20" cy="18" r="5" stroke="currentColor" stroke-width="1.5"/>
-						<path d="M5 28l8-6 5 4 7-8 10 10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-					</svg>
-					<span class="text-sm font-medium">foto do resultado aqui</span>
-					<span class="text-xs mt-1 opacity-60">substituir pela foto real</span>
+					<img
+						src="/images/bg_image.png"
+						alt="Resultado de prótese capilar"
+						class="w-full h-full object-cover"
+					/>
+					<!-- Edge fade: top -->
+					<div class="absolute inset-x-0 top-0 h-20 pointer-events-none  border-white bg-linear-to-b from-bg-primary to-transparent from-20%"
+						aria-hidden="true"
+					></div>
+					<!-- Edge fade: bottom -->
+					<div class="absolute inset-x-0 bottom-0 h-20 pointer-events-none  border-white bg-linear-to-t from-bg-primary to-transparent from-20%"
+						aria-hidden="true"
+					></div>
+					<!-- Edge fade: left -->
+					<div class="absolute inset-y-0 left-0 w-20 pointer-events-none  border-white bg-linear-to-r from-bg-primary to-transparent from-20%"
+						aria-hidden="true"
+					></div>
+					<!-- Edge fade: right -->
+					<div class="absolute inset-y-0 right-0 w-20 pointer-events-none  border-white bg-linear-to-l from-bg-primary to-transparent from-20%"
+						aria-hidden="true"
+					></div>
 				</div>
 			</div>
 

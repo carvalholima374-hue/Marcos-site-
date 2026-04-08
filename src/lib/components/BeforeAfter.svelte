@@ -3,7 +3,14 @@
 	import { getWhatsAppURL } from '$lib/stores/whatsapp';
 
 	const waURL = getWhatsAppURL();
-	const photos = Array.from({ length: 6 }, (_, i) => i);
+
+	const realPhotos = [
+		'/images/antes_depois_1.JPG',
+		'/images/antes_depois_2.JPG',
+	];
+
+	const totalSlots = 6;
+	const photos = Array.from({ length: totalSlots }, (_, i) => realPhotos[i] ?? null);
 </script>
 
 <section class="bg-[#0A0A0A] py-20 lg:py-24" aria-label="Transformações antes e depois">
@@ -24,19 +31,27 @@
 
 		<!-- Photo grid -->
 		<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-			{#each photos as _, i}
-				<div
-					use:reveal={{ delay: i * 60 }}
-					class="border-2 border-dashed border-[#2A2A2A] rounded-sm bg-[#111111] flex flex-col items-center justify-center text-[#A0A0A0]"
-					style="aspect-ratio: 3/4;"
-					aria-label="Foto antes/depois — substituir pela foto real"
-				>
-					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="mb-2 opacity-40" aria-hidden="true">
-						<rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.2"/>
-						<circle cx="16" cy="14" r="4" stroke="currentColor" stroke-width="1.2"/>
-						<path d="M4 22l6-5 4 3.5 6-7 8 8.5" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-					</svg>
-					<span class="text-xs font-medium">foto antes/depois</span>
+			{#each photos as src, i}
+				<div use:reveal={{ delay: i * 60 }} style="aspect-ratio: 4/4;">
+					{#if src}
+						<img
+							{src}
+							alt="Transformação antes e depois {i + 1}"
+							class="w-full h-full object-cover rounded-sm"
+						/>
+					{:else}
+						<div
+							class="w-full h-full border-2 border-dashed border-[#2A2A2A] rounded-sm bg-[#111111] flex flex-col items-center justify-center text-[#A0A0A0]"
+							aria-label="Foto antes/depois — substituir pela foto real"
+						>
+							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="mb-2 opacity-40" aria-hidden="true">
+								<rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.2"/>
+								<circle cx="16" cy="14" r="4" stroke="currentColor" stroke-width="1.2"/>
+								<path d="M4 22l6-5 4 3.5 6-7 8 8.5" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+							</svg>
+							<span class="text-xs font-medium">foto antes/depois</span>
+						</div>
+					{/if}
 				</div>
 			{/each}
 		</div>
