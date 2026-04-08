@@ -78,7 +78,7 @@
 					style="aspect-ratio: 4/5;"
 				>
 					<img
-						src="/images/bg_image.png"
+						src="images/bg_image.png"
 						alt="Resultado de prótese capilar"
 						class="w-full h-full object-cover"
 					/>

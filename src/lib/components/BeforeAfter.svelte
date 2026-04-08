@@ -5,8 +5,8 @@
 	const waURL = getWhatsAppURL();
 
 	const realPhotos = [
-		'/images/antes_depois_1.JPG',
-		'/images/antes_depois_2.JPG',
+		'images/antes_depois_1.JPG',
+		'images/antes_depois_2.JPG',
 	];
 
 	const totalSlots = 6;
