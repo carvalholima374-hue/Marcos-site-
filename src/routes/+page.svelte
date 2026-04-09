@@ -8,6 +8,7 @@
 	import HowItWorks from '$lib/components/HowItWorks.svelte';
 	import About from '$lib/components/About.svelte';
 	import FAQ from '$lib/components/FAQ.svelte';
+	import Bonus from '$lib/components/Bonus.svelte';
 	import CTAFinal from '$lib/components/CTAFinal.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 </script>
@@ -22,6 +23,7 @@
 	<HowItWorks />
 	<About />
 	<FAQ />
+	<Bonus />
 	<CTAFinal />
 </main>
 <Footer />

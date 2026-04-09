@@ -4,13 +4,21 @@
 
 	const waURL = getWhatsAppURL();
 
-	const realPhotos = [
+	const photos = [
 		'images/antes_depois_1.JPG',
 		'images/antes_depois_2.JPG',
 	];
 
-	const totalSlots = 6;
-	const photos = Array.from({ length: totalSlots }, (_, i) => realPhotos[i] ?? null);
+	// Carousel state
+	let currentIndex = $state(0);
+
+	function prev() {
+		currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+	}
+
+	function next() {
+		currentIndex = (currentIndex + 1) % photos.length;
+	}
 
 	// Lightbox state
 	let lightboxSrc = $state<string | null>(null);
@@ -18,7 +26,6 @@
 	let translateX = $state(0);
 	let translateY = $state(0);
 
-	// Drag state (not reactive, just internal tracking)
 	let isDragging = $state(false);
 	let hasDragged = false;
 	let dragStartX = 0;
@@ -26,10 +33,7 @@
 	let dragOriginX = 0;
 	let dragOriginY = 0;
 
-	// Touch/pinch state
 	let lastPinchDist = 0;
-
-	// Ref para checar bounds da imagem no clique
 	let imgEl: HTMLImageElement | null = null;
 
 	function openLightbox(src: string) {
@@ -134,7 +138,7 @@
 
 		<div use:reveal class="mb-2">
 			<h2
-				class="font-display text-3xl lg:text-4xl font-bold text-[#F5F5F5] mb-2"
+				class="font-display text-3xl lg:text-4xl font-bold text-[#F5F5F5] mb-2 mx-auto"
 				style="font-family: 'Playfair Display', Georgia, serif;"
 			>
 				Transformações reais
@@ -145,38 +149,62 @@
 			<p class="text-[#A0A0A0]">Clientes reais, resultados reais</p>
 		</div>
 
-		<!-- Photo grid -->
-		<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-			{#each photos as src, i}
-				<div use:reveal={{ delay: i * 60 }} style="aspect-ratio: 4/4;">
-					{#if src}
-						<button
-							type="button"
-							class="w-full h-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A017] rounded-sm"
-							aria-label="Ampliar foto {i + 1}"
-							onclick={() => openLightbox(src)}
-						>
-							<img
-								{src}
-								alt="Transformação antes e depois {i + 1}"
-								class="w-full h-full object-cover rounded-sm transition-opacity duration-200 hover:opacity-90"
-							/>
-						</button>
-					{:else}
-						<div
-							class="w-full h-full border-2 border-dashed border-[#2A2A2A] rounded-sm bg-[#111111] flex flex-col items-center justify-center text-[#A0A0A0]"
-							aria-label="Foto antes/depois — substituir pela foto real"
-						>
-							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="mb-2 opacity-40" aria-hidden="true">
-								<rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.2"/>
-								<circle cx="16" cy="14" r="4" stroke="currentColor" stroke-width="1.2"/>
-								<path d="M4 22l6-5 4 3.5 6-7 8 8.5" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-							</svg>
-							<span class="text-xs font-medium">foto antes/depois</span>
-						</div>
-					{/if}
+		<!-- Carousel -->
+		<div class="mb-10">
+			<div use:reveal class="relative flex items-center justify-center gap-4">
+				<!-- Prev arrow -->
+				<button
+					type="button"
+					onclick={prev}
+					aria-label="Foto anterior"
+					class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-[#2A2A2A] text-[#A0A0A0] hover:text-[#D4A017] hover:border-[#D4A017] transition-colors duration-200"
+				>
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+						<path d="M11 4l-5 5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+
+				<!-- Card -->
+				<div style="aspect-ratio: 1; max-width: 600px; width: 100%;">
+					<button
+						type="button"
+						class="w-full h-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A017] rounded-sm"
+						aria-label="Ampliar foto {currentIndex + 1}"
+						onclick={() => openLightbox(photos[currentIndex])}
+					>
+						<img
+							src={photos[currentIndex]}
+							alt="Transformação antes e depois {currentIndex + 1}"
+							class="w-full h-full object-cover rounded-sm"
+						/>
+					</button>
 				</div>
-			{/each}
+
+				<!-- Next arrow -->
+				<button
+					type="button"
+					onclick={next}
+					aria-label="Próxima foto"
+					class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-[#2A2A2A] text-[#A0A0A0] hover:text-[#D4A017] hover:border-[#D4A017] transition-colors duration-200"
+				>
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+						<path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Dots -->
+			<div class="flex justify-center gap-2 mt-4">
+				{#each photos as _, i}
+					<button
+						type="button"
+						onclick={() => currentIndex = i}
+						aria-label="Ir para foto {i + 1}"
+						class="w-2 h-2 rounded-full transition-colors duration-200"
+						style="background-color: {currentIndex === i ? '#D4A017' : '#2A2A2A'};"
+					></button>
+				{/each}
+			</div>
 		</div>
 
 		<!-- Text CTA -->
@@ -200,7 +228,6 @@
 
 <!-- Lightbox -->
 {#if lightboxSrc}
-	<!-- Backdrop: cobre a tela toda e recebe todos os eventos de mouse -->
 	<div
 		class="fixed inset-0 z-50 flex items-center justify-center select-none"
 		style="background: rgba(0,0,0,0.92); cursor: {isDragging ? 'grabbing' : scale > 1 ? 'grab' : 'default'}; touch-action: none;"
@@ -216,7 +243,6 @@
 		ontouchmove={onTouchmove}
 		ontouchend={onTouchend}
 	>
-		<!-- Image container: apenas visual, sem eventos -->
 		<div class="pointer-events-none">
 			<img
 				bind:this={imgEl}
@@ -228,7 +254,6 @@
 			/>
 		</div>
 
-		<!-- Close button -->
 		<button
 			type="button"
 			class="absolute top-4 right-4 text-white opacity-70 hover:opacity-100 transition-opacity pointer-events-auto"
@@ -240,7 +265,6 @@
 			</svg>
 		</button>
 
-		<!-- Zoom hint -->
 		{#if scale === 1}
 			<p class="absolute bottom-4 left-0 right-0 text-center text-xs text-white opacity-40 pointer-events-none">
 				Scroll ou pinch para dar zoom · Clique fora para fechar
