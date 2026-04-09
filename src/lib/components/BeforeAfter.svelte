@@ -203,7 +203,7 @@
 	<!-- Backdrop: cobre a tela toda e recebe todos os eventos de mouse -->
 	<div
 		class="fixed inset-0 z-50 flex items-center justify-center select-none"
-		style="background: rgba(0,0,0,0.92); cursor: {isDragging ? 'grabbing' : scale > 1 ? 'grab' : 'default'};"
+		style="background: rgba(0,0,0,0.92); cursor: {isDragging ? 'grabbing' : scale > 1 ? 'grab' : 'default'}; touch-action: none;"
 		role="dialog"
 		aria-modal="true"
 		aria-label="Visualização ampliada"
