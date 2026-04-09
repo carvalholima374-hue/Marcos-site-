@@ -56,7 +56,6 @@
 
 	let arrowOffset = $state(0);
 	let isPaused = $state(false);
-	let touchTimer: ReturnType<typeof setTimeout> | null = null;
 
 	function prev() {
 		arrowOffset += STEP;
@@ -67,15 +66,7 @@
 	}
 
 	function onTouchStart() {
-		isPaused = true;
-		if (touchTimer) clearTimeout(touchTimer);
-	}
-
-	function onTouchEnd() {
-		if (touchTimer) clearTimeout(touchTimer);
-		touchTimer = setTimeout(() => {
-			isPaused = false;
-		}, 2000);
+		isPaused = !isPaused;
 	}
 </script>
 
@@ -108,7 +99,6 @@
 			role="region"
 			aria-label="Depoimentos de clientes"
 			ontouchstart={onTouchStart}
-			ontouchend={onTouchEnd}
 		>
 			<!-- Arrow offset layer -->
 			<div
@@ -218,9 +208,11 @@
 		animation-play-state: paused;
 	}
 
-	/* Pause on hover */
-	.carousel-wrapper:hover .carousel-track {
-		animation-play-state: paused;
+	/* Pause on hover — só em dispositivos com mouse real */
+	@media (hover: hover) {
+		.carousel-wrapper:hover .carousel-track {
+			animation-play-state: paused;
+		}
 	}
 
 	/* Pause on keyboard focus inside */
