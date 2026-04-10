@@ -54,7 +54,7 @@
 		<!-- Brinde image -->
 		<div use:reveal={{ delay: 160 }} class="flex justify-center">
 			<img
-				src="/images/brinde.jpeg"
+				src="images/brinde.jpeg"
 				alt="Kit de brinde exclusivo para novos clientes"
 				class="max-w-xs w-full rounded-lg object-cover"
 			/>
