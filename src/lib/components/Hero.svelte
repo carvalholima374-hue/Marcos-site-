@@ -74,10 +74,10 @@
 			</div>
 
 			<!-- Right: photo -->
-			<div use:reveal={{ delay: 150 }} class="order-first lg:order-last bg-bg-primary w-fit mask-x-from-transparent mask-x-to-black mask-x-to-5% mask-y-from-transparent mask-y-to-black mask-y-to-5%">
+			<div use:reveal={{ delay: 150 }} class="order-first lg:order-last w-fit mask-x-from-transparent mask-x-to-black mask-x-to-5% mask-y-from-transparent mask-y-to-black mask-y-to-5%">
 				<div
 					class="relative w-full max-w-sm mx-auto lg:max-w-none overflow-hidden rounded-sm"
-					style="aspect-ratio: 4/5;"
+					// style="aspect-ratio: 4/5;"
 				>
 					<img
 						src="images/bg_image.png"
