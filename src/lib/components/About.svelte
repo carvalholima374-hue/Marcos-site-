@@ -29,11 +29,11 @@
 					class="font-display text-2xl lg:text-3xl font-bold text-[#F5F5F5] mb-6 text-center"
 					style="font-family: 'Playfair Display', Georgia, serif;"
 				>
-					Marcos, especialista em prótese capilar
+					Marcos, especialista em imagem masculina
 				</h2>
 
 				<p class="text-[#A0A0A0] leading-relaxed text-base lg:text-lg text-justify">
-					Com anos de experiência em corte de cabelo e barba, o Marcos chegou
+					Com anos de experiência em imagem masculina, o Marcos chegou
 					à prótese capilar com um olhar apurado para proporção, estilo e
 					naturalidade — e foi o primeiro profissional a oferecer esse serviço
 					em Santo André. Cada atendimento é personalizado, porque cada cabeça

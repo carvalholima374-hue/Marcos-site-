@@ -47,7 +47,7 @@
 		<div use:reveal={{ delay: 120 }} class="mb-10">
 			<!-- ajustar descrição do brinde com o Marcos -->
 			<p class="text-[#A0A0A0] max-w-lg mx-auto" style="font-family: 'DM Sans', system-ui, sans-serif;">
-				Todo cliente novo recebe um brinde do Marcos na hora do atendimento, um conjunto de produtos para ajuda-lo a cuidar do seu novo penteado.
+				Todo cliente novo recebe um brinde do Marcos na hora do atendimento, um conjunto de produtos devidamente selecionados para ajudá-lo a cuidar do seu novo penteado.
 			</p>
 		</div>
 
