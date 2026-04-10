@@ -30,7 +30,7 @@
 
 		<div use:reveal class="mb-14 flex flex-col items-center">
 			<h2
-				class="font-display text-3xl lg:text-4xl font-bold text-[#F5F5F5]"
+				class="font-display text-3xl lg:text-4xl font-bold text-[#F5F5F5] text-center"
 				style="font-family: 'Playfair Display', Georgia, serif;"
 			>
 				Por que escolher o Marcos

@@ -32,10 +32,10 @@
 			<!-- Left: copy -->
 			<div use:reveal={{ delay: 0 }} class="flex flex-col items-center">
 				<!-- Badge -->
-				<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-bg-secondary mb-8">
+				<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-bg-secondary mb-8 text-center">
 					<span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0" aria-hidden="true"></span>
 					<span class="text-xs font-medium text-text-secondary tracking-wide uppercase">
-						Atendimento presencial · Santo André/SP
+						Atendimento presencial <span class="whitespace-nowrap"> · Santo André/SP</span>
 					</span>
 				</div>
 

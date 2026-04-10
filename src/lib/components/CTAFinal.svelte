@@ -42,7 +42,7 @@
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label="Agendar avaliação gratuita pelo WhatsApp"
-				class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-[#D4A017] text-[#0A0A0A] font-semibold text-lg rounded-sm w-full sm:w-auto transition-all duration-200 hover:bg-[#F0B429] hover:scale-[1.02] active:scale-100"
+				class="inline-flex items-center justify-center gap-2 px-4 md:px-10 py-4 bg-[#D4A017] text-[#0A0A0A] font-semibold text-lg rounded-sm w-full sm:w-auto transition-all duration-200 hover:bg-[#F0B429] hover:scale-[1.02] active:scale-100"
 			>
 				Agendar avaliação gratuita
 				<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
