@@ -56,7 +56,7 @@
 			<img
 				src="images/brinde.jpeg"
 				alt="Kit de brinde exclusivo para novos clientes"
-				class="max-w-xs w-full rounded-lg object-cover"
+				class="max-w-2xl w-full rounded-lg object-cover"
 			/>
 		</div>
 

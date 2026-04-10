@@ -68,12 +68,12 @@
 		<!-- Carousel -->
 		<div class="mb-10">
 			<div use:reveal class="relative flex items-center justify-center gap-4">
-				<!-- Prev arrow -->
+				<!-- Prev arrow — hidden on mobile (overlaid instead) -->
 				<button
 					type="button"
 					onclick={prev}
 					aria-label="Foto anterior"
-					class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-[#2A2A2A] text-[#A0A0A0] hover:text-[#D4A017] hover:border-[#D4A017] transition-colors duration-200"
+					class="hidden sm:flex flex-shrink-0 w-10 h-10 items-center justify-center rounded-full border border-[#2A2A2A] text-[#A0A0A0] hover:text-[#D4A017] hover:border-[#D4A017] transition-colors duration-200"
 				>
 					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
 						<path d="M11 4l-5 5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -81,7 +81,7 @@
 				</button>
 
 				<!-- Card -->
-				<div style="aspect-ratio: 1; max-width: 800px; width: 100%;">
+				<div class="relative" style="aspect-ratio: 1; max-width: 800px; width: 100%;">
 					<button
 						type="button"
 						class="w-full h-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A017] rounded-sm"
@@ -94,14 +94,36 @@
 							class="w-full h-full object-cover rounded-sm"
 						/>
 					</button>
+
+					<!-- Overlay arrows — mobile only -->
+					<button
+						type="button"
+						onclick={prev}
+						aria-label="Foto anterior"
+						class="sm:hidden absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors duration-200"
+					>
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+							<path d="M11 4l-5 5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+					<button
+						type="button"
+						onclick={next}
+						aria-label="Próxima foto"
+						class="sm:hidden absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors duration-200"
+					>
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+							<path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
 				</div>
 
-				<!-- Next arrow -->
+				<!-- Next arrow — hidden on mobile (overlaid instead) -->
 				<button
 					type="button"
 					onclick={next}
 					aria-label="Próxima foto"
-					class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-[#2A2A2A] text-[#A0A0A0] hover:text-[#D4A017] hover:border-[#D4A017] transition-colors duration-200"
+					class="hidden sm:flex flex-shrink-0 w-10 h-10 items-center justify-center rounded-full border border-[#2A2A2A] text-[#A0A0A0] hover:text-[#D4A017] hover:border-[#D4A017] transition-colors duration-200"
 				>
 					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
 						<path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>

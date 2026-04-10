@@ -51,7 +51,7 @@
 			</div>
 
 			<!-- Copyright + Dev credit -->
-			<div class="flex flex-col items-center sm:items-end gap-1">
+			<div class="flex flex-col items-center sm:items-end gap-1 text-center">
 				<p class="text-[#A0A0A0] text-xs">
 					© {year} {PUBLIC_BUSINESS_NAME}. Todos os direitos reservados.
 				</p>
