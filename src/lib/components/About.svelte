@@ -10,7 +10,7 @@
 			<!-- Photo -->
 			<div use:reveal class="flex justify-center lg:justify-start">
 				<img
-					src="/images/marcos_profile.jpeg"
+					src="images/marcos_profile.jpeg"
 					alt="Marcos, especialista em prótese capilar"
 					class="w-64 h-64 lg:w-72 lg:h-72 rounded-full object-cover object-top flex-shrink-0 border-2 border-[#D4A017]/30"
 				/>
