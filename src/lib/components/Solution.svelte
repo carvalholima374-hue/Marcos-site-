@@ -23,14 +23,14 @@
 <section class="bg-[#0A0A0A] py-20 lg:py-24" aria-label="O que é a prótese capilar">
 	<div class="max-w-6xl mx-auto px-6">
 
-		<div use:reveal class="mb-14">
+		<div use:reveal class="mb-14 flex flex-col items-center">
 			<h2
 				class="font-display text-3xl lg:text-4xl font-bold text-[#F5F5F5] mb-4"
 				style="font-family: 'Playfair Display', Georgia, serif;"
 			>
 				O que é a prótese capilar
 			</h2>
-			<p class="text-[#A0A0A0] text-lg max-w-xl">
+			<p class="text-[#A0A0A0] text-lg max-w-xl text-center">
 				Uma solução estética não cirúrgica que devolve aparência natural
 				ao cabelo — com discrição total e resultado imediato.
 			</p>

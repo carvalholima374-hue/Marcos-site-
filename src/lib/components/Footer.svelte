@@ -22,7 +22,7 @@
 			<div class="flex items-center gap-5">
 				<!-- Instagram -->
 				<a
-					href="https://instagram.com"
+					href="https://www.instagram.com/marcos_protesecapilar/"
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="Instagram do Marcos Prótese Capilar"
@@ -50,10 +50,15 @@
 				</a>
 			</div>
 
-			<!-- Copyright -->
-			<p class="text-[#A0A0A0] text-xs">
-				© {year} {PUBLIC_BUSINESS_NAME}. Todos os direitos reservados.
-			</p>
+			<!-- Copyright + Dev credit -->
+			<div class="flex flex-col items-center sm:items-end gap-1">
+				<p class="text-[#A0A0A0] text-xs">
+					© {year} {PUBLIC_BUSINESS_NAME}. Todos os direitos reservados.
+				</p>
+				<p class="text-[#585858] text-xs">
+					Desenvolvido por <a href="https://arcturuz.dev" target="_blank" rel="noopener noreferrer" class="hover:text-[#D4A017] transition-colors duration-200">Arcturuz</a>
+				</p>
+			</div>
 
 		</div>
 	</div>

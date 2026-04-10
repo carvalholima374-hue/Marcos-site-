@@ -43,7 +43,7 @@
 <section class="bg-[#111111] py-20 lg:py-24" aria-label="Perguntas frequentes">
 	<div class="max-w-3xl mx-auto px-6">
 
-		<div use:reveal class="mb-12">
+		<div use:reveal class="mb-12 flex flex-col items-center">
 			<h2
 				class="font-display text-3xl lg:text-4xl font-bold text-[#F5F5F5]"
 				style="font-family: 'Playfair Display', Georgia, serif;"

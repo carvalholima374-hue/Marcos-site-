@@ -28,7 +28,7 @@
 <section class="bg-[#111111] py-20 lg:py-24" aria-label="Diferenciais">
 	<div class="max-w-6xl mx-auto px-6">
 
-		<div use:reveal class="mb-14">
+		<div use:reveal class="mb-14 flex flex-col items-center">
 			<h2
 				class="font-display text-3xl lg:text-4xl font-bold text-[#F5F5F5]"
 				style="font-family: 'Playfair Display', Georgia, serif;"

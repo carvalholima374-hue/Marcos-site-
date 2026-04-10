@@ -47,25 +47,17 @@
 		<div use:reveal={{ delay: 120 }} class="mb-10">
 			<!-- ajustar descrição do brinde com o Marcos -->
 			<p class="text-[#A0A0A0] max-w-lg mx-auto" style="font-family: 'DM Sans', system-ui, sans-serif;">
-				Todo cliente novo que agendar pelo site recebe um mimo do Marcos na hora do atendimento.
+				Todo cliente novo recebe um brinde do Marcos na hora do atendimento, um conjunto de produtos para ajuda-lo a cuidar do seu novo penteado.
 			</p>
 		</div>
 
-		<!-- CTA -->
-		<div use:reveal={{ delay: 160 }}>
-			<a
-				href={waURL}
-				target="_blank"
-				rel="noopener noreferrer"
-				aria-label="Agendar e garantir meu brinde pelo WhatsApp"
-				class="inline-flex items-center gap-2 px-8 py-4 rounded-sm font-semibold text-[#0A0A0A] bg-[#D4A017] hover:bg-[#F0B429] transition-colors duration-200 text-sm"
-				style="font-family: 'DM Sans', system-ui, sans-serif;"
-			>
-				Agendar e garantir meu brinde
-				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-					<path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-			</a>
+		<!-- Brinde image -->
+		<div use:reveal={{ delay: 160 }} class="flex justify-center">
+			<img
+				src="/images/brinde.jpeg"
+				alt="Kit de brinde exclusivo para novos clientes"
+				class="max-w-xs w-full rounded-lg object-cover"
+			/>
 		</div>
 
 	</div>

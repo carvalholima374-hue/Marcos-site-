@@ -3,15 +3,15 @@
 
 	const testimonials = [
 		{
-			name: '[Nome do cliente 1]',
-			location: '[Cidade, SP]',
-			text: '[Depoimento real aqui]',
+			name: 'Carlos E.',
+			location: 'Santo André, SP',
+			text: "O Marcos é muito atencioso, explicou tudo antes de começar. Me sinto muito mais confiante no trabalho e nos relacionamentos.",
 			rating: 5,
 		},
 		{
-			name: '[Nome do cliente 2]',
-			location: '[Cidade, SP]',
-			text: '[Depoimento real aqui]',
+			name: 'Ricardo M.',
+			location: 'Santo André, SP',
+			text: "Em menos de 3 horas minha vida mudou. Minha esposa não acreditou quando me viu, achou que eu tinha feito transplante.",
 			rating: 5,
 		},
 	];
@@ -29,12 +29,12 @@
 		>
 			O que os clientes dizem
 		</h2>
-		<p
+		<!-- <p
 			class="mt-3 text-sm text-text-secondary text-center"
 			style="font-family: 'DM Sans', system-ui, sans-serif;"
 		>
 			Resultados reais de clientes reais
-		</p>
+		</p> -->
 	</div>
 
 	<!-- Cards -->

@@ -7,37 +7,32 @@
 
 		<div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-			<!-- Photo placeholder -->
+			<!-- Photo -->
 			<div use:reveal class="flex justify-center lg:justify-start">
-				<div
-					class="relative w-64 h-64 lg:w-72 lg:h-72 rounded-full border-2 border-dashed border-[#2A2A2A] bg-[#111111] flex flex-col items-center justify-center text-[#A0A0A0] flex-shrink-0"
-					aria-label="Foto do Marcos — substituir pela foto real"
-				>
-					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="mb-2 opacity-40" aria-hidden="true">
-						<circle cx="20" cy="16" r="7" stroke="currentColor" stroke-width="1.5"/>
-						<path d="M6 36c0-7.73 6.27-14 14-14s14 6.27 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-					</svg>
-					<span class="text-xs font-medium">foto do Marcos</span>
-				</div>
+				<img
+					src="/images/marcos_profile.jpeg"
+					alt="Marcos, especialista em prótese capilar"
+					class="w-64 h-64 lg:w-72 lg:h-72 rounded-full object-cover object-top flex-shrink-0 border-2 border-[#D4A017]/30"
+				/>
 			</div>
 
 			<!-- Text -->
 			<div use:reveal={{ delay: 100 }}>
 				<!-- Decorative quote -->
-				<div
+				<!-- <div
 					class="text-[6rem] leading-none font-bold text-[#D4A017] opacity-20 select-none -mb-6"
 					style="font-family: 'Playfair Display', Georgia, serif;"
 					aria-hidden="true"
-				>"</div>
+				>"</div> -->
 
 				<h2
-					class="font-display text-2xl lg:text-3xl font-bold text-[#F5F5F5] mb-6"
+					class="font-display text-2xl lg:text-3xl font-bold text-[#F5F5F5] mb-6 text-center"
 					style="font-family: 'Playfair Display', Georgia, serif;"
 				>
 					Marcos, especialista em prótese capilar
 				</h2>
 
-				<p class="text-[#A0A0A0] leading-relaxed text-base lg:text-lg">
+				<p class="text-[#A0A0A0] leading-relaxed text-base lg:text-lg text-justify">
 					Com anos de experiência em corte de cabelo e barba, o Marcos chegou
 					à prótese capilar com um olhar apurado para proporção, estilo e
 					naturalidade — e foi o primeiro profissional a oferecer esse serviço
