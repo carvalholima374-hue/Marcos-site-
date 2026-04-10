@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { reveal } from '$lib/actions/reveal';
 	import { getWhatsAppURL } from '$lib/stores/whatsapp';
-    import LightRays from './LightRays.svelte';
+	import HeroGrid from './HeroGrid.svelte';
 
 	const waURL = getWhatsAppURL();
 </script>
@@ -19,9 +19,7 @@
 		<rect width="100%" height="100%" filter="url(#noise)" />
 	</svg> -->
 
-    <div class="absolute inset-0">
-         <LightRays raysColor="#f5da42" saturation={2}/>
-    </div>
+	<HeroGrid />
 
 	<!-- Subtle horizontal line accent -->
 	<div class="absolute top-0 left-0 right-0 h-px bg-accent opacity-40" aria-hidden="true"></div>
@@ -78,7 +76,7 @@
 			<!-- Right: photo -->
 			<div use:reveal={{ delay: 150 }} class="order-first lg:order-last bg-bg-primary w-fit mask-x-from-transparent mask-x-to-black mask-x-to-5% mask-y-from-transparent mask-y-to-black mask-y-to-5%">
 				<div
-					class="relative w-full max-w-sm mx-auto lg:max-w-none overflow-hidden rounded-sm mask-[url(/images/smoke.jpg)] "
+					class="relative w-full max-w-sm mx-auto lg:max-w-none overflow-hidden rounded-sm"
 					style="aspect-ratio: 4/5;"
 				>
 					<img
