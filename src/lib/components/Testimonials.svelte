@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { reveal } from '$lib/actions/reveal';
+	import { Star } from 'lucide-svelte';
 
 	const testimonials = [
 		{
@@ -48,12 +49,7 @@
 					<!-- Stars -->
 					<div class="stars" aria-label="{item.rating} estrelas">
 						{#each { length: item.rating } as _}
-							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-								<path
-									d="M7 1l1.63 3.84 4.12.37-3.04 2.72.92 4.07L7 9.9l-3.63 2.1.92-4.07L1.25 5.21l4.12-.37L7 1z"
-									fill="#D4A017"
-								/>
-							</svg>
+							<Star size={14} color="#D4A017" fill="#D4A017" strokeWidth={0} />
 						{/each}
 					</div>
 

@@ -2,6 +2,7 @@
 	import { reveal } from '$lib/actions/reveal';
 	import { getWhatsAppURL } from '$lib/stores/whatsapp';
 	import { PUBLIC_ADDRESS } from '$env/static/public';
+	import { ArrowRight, MapPin } from 'lucide-svelte';
 
 	const waURL = getWhatsAppURL();
 </script>
@@ -45,9 +46,7 @@
 				class="inline-flex items-center justify-center gap-2 px-4 md:px-10 py-4 bg-[#D4A017] text-[#0A0A0A] font-semibold text-lg rounded-sm w-full sm:w-auto transition-all duration-200 hover:bg-[#F0B429] hover:scale-[1.02] active:scale-100"
 			>
 				Agendar avaliação gratuita
-				<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-					<path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
+				<ArrowRight size={18} />
 			</a>
 		</div>
 
@@ -59,10 +58,7 @@
 				aria-label="Ver localização no Google Maps"
 				class="inline-flex items-center gap-2 hover:text-[#D4A017] transition-colors duration-200"
 			>
-				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="flex-shrink-0 text-[#D4A017]" aria-hidden="true">
-					<path d="M7 1.5A3.5 3.5 0 003.5 5c0 2.625 3.5 7.5 3.5 7.5S10.5 7.625 10.5 5A3.5 3.5 0 007 1.5z" stroke="currentColor" stroke-width="1.2"/>
-					<circle cx="7" cy="5" r="1.2" fill="currentColor"/>
-				</svg>
+				<MapPin size={14} class="flex-shrink-0 text-[#D4A017]" />
 				<span>{PUBLIC_ADDRESS}</span>
 			</a>
 		</div>

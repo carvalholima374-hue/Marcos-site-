@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { getWhatsAppURL } from '$lib/stores/whatsapp';
 	import { PUBLIC_BUSINESS_NAME } from '$env/static/public';
+	import InstagramIcon from '$lib/icons/InstagramIcon.svelte';
+	import WhatsAppIcon from '$lib/icons/WhatsAppIcon.svelte';
 
 	const waURL = getWhatsAppURL();
 	const year = new Date().getFullYear();
@@ -28,11 +30,7 @@
 					aria-label="Instagram do Marcos Prótese Capilar"
 					class="text-[#A0A0A0] hover:text-[#D4A017] transition-colors duration-200"
 				>
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-						<rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
-						<circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.5"/>
-						<circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-					</svg>
+					<InstagramIcon size={20} />
 				</a>
 
 				<!-- WhatsApp -->
@@ -43,10 +41,7 @@
 					aria-label="WhatsApp do Marcos Prótese Capilar"
 					class="text-[#A0A0A0] hover:text-[#D4A017] transition-colors duration-200"
 				>
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-						<path d="M3 21l1.65-4.88A8.96 8.96 0 013 12C3 7.03 7.03 3 12 3s9 4.03 9 9-4.03 9-9 9a8.96 8.96 0 01-4.35-1.12L3 21z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-						<path d="M9 10.5c0 3 2.5 5.5 5.5 5.5h0c.5 0 1-.2 1.35-.55l.65-.65a.5.5 0 000-.7l-1.5-1.5a.5.5 0 00-.7 0l-.35.35a3.55 3.55 0 01-2.6-2.6l.35-.35a.5.5 0 000-.7l-1.5-1.5a.5.5 0 00-.7 0l-.65.65A1.9 1.9 0 009 10.5z" fill="currentColor"/>
-					</svg>
+					<WhatsAppIcon size={20} />
 				</a>
 			</div>
 

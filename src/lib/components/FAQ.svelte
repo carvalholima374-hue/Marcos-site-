@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { reveal } from '$lib/actions/reveal';
 	import { getWhatsAppURL } from '$lib/stores/whatsapp';
+	import { ChevronDown } from 'lucide-svelte';
 
 	const waURL = getWhatsAppURL();
 
@@ -60,14 +61,11 @@
 					>
 						<span>{faq.q}</span>
 						<!-- Arrow SVG -->
-						<svg
-							class="faq-arrow flex-shrink-0 w-4 h-4 text-[#D4A017] transition-transform duration-300"
-							viewBox="0 0 16 16"
-							fill="none"
-							aria-hidden="true"
-						>
-							<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
+						<ChevronDown
+							size={16}
+							color="#D4A017"
+							class="faq-arrow flex-shrink-0 transition-transform duration-300"
+						/>
 					</summary>
 
 					<div class="faq-body pb-5">
@@ -94,7 +92,7 @@
 </section>
 
 <style>
-	.faq-item[open] .faq-arrow {
+	.faq-item[open] :global(.faq-arrow) {
 		transform: rotate(180deg);
 	}
 

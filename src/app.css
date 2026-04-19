@@ -6,11 +6,13 @@
     --color-bg-secondary: #111111;
     --color-bg-card: #181818;
     --color-bg-footer: #080808;
+    --color-bg-subtle: #2A2A2A;
     --color-accent: #D4A017;
     --color-accent-hover: #F0B429;
     --color-text-primary: #F5F5F5;
     --color-text-secondary: #A0A0A0;
     --color-border: #2A2A2A;
+    --color-border-secondary: #A0A0A0;
 
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'DM Sans', system-ui, sans-serif;

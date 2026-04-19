@@ -2,6 +2,7 @@
     import { reveal } from "$lib/actions/reveal";
     import { getWhatsAppURL } from "$lib/stores/whatsapp";
     import HeroGrid from "./HeroGrid.svelte";
+    import { ArrowRight } from "lucide-svelte";
 
     const waURL = getWhatsAppURL();
 </script>
@@ -89,21 +90,7 @@
                         ].join(" ")}
                     >
                         Agendar avaliação gratuita
-                        <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M3 8h10M9 4l4 4-4 4"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
+                        <ArrowRight size={16} />
                     </a>
                 </div>
 

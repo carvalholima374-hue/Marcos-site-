@@ -25,6 +25,7 @@
 	},
 	"dependencies": {
 		"embla-carousel": "^8.6.0",
+		"lucide-svelte": "^1.0.1",
 		"ogl": "^1.0.11",
 		"photoswipe": "^5.4.4"
 	}

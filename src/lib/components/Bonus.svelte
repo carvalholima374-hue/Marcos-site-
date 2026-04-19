@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { reveal } from '$lib/actions/reveal';
 	import { getWhatsAppURL } from '$lib/stores/whatsapp';
+	import { Gift } from 'lucide-svelte';
 
 	const waURL = getWhatsAppURL('Olá, vim pelo site e gostaria de agendar minha avaliação gratuita e garantir meu brinde!');
 </script>
@@ -19,18 +20,7 @@
 
 		<!-- Gift icon -->
 		<div use:reveal={{ delay: 60 }} class="flex justify-center mb-6">
-			<svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-				<!-- Ribbon vertical -->
-				<line x1="24" y1="14" x2="24" y2="42" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round"/>
-				<!-- Box body -->
-				<rect x="8" y="20" width="32" height="22" rx="1.5" stroke="#D4A017" stroke-width="1.5"/>
-				<!-- Lid -->
-				<rect x="6" y="14" width="36" height="7" rx="1.5" stroke="#D4A017" stroke-width="1.5"/>
-				<!-- Left bow loop -->
-				<path d="M24 14 C20 10 12 10 14 6 C16 2 22 6 24 14Z" stroke="#D4A017" stroke-width="1.5" stroke-linejoin="round"/>
-				<!-- Right bow loop -->
-				<path d="M24 14 C28 10 36 10 34 6 C32 2 26 6 24 14Z" stroke="#D4A017" stroke-width="1.5" stroke-linejoin="round"/>
-			</svg>
+			<Gift size={48} color="#D4A017" strokeWidth={1.5} />
 		</div>
 
 		<!-- Heading -->
