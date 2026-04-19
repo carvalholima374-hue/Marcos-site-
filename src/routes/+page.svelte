@@ -1,6 +1,4 @@
-<script lang="ts">
-	import Hero from '$lib/components/Hero.svelte';
-	import Problem from '$lib/components/Problem.svelte';
+<script lang="ts"> import Hero from '$lib/components/Hero.svelte'; import Problem from '$lib/components/Problem.svelte';
 	import Solution from '$lib/components/Solution.svelte';
 	import Differentials from '$lib/components/Differentials.svelte';
 	import BeforeAfter from '$lib/components/BeforeAfter.svelte';

@@ -1,12 +1,4 @@
 <script lang="ts">
-	// const images = [
-	// 	'/images/marcos_profile.jpeg',
-	// 	'/images/bg_image.png',
-	// 	'/images/antes_depois_1.JPG',
-	// 	'/images/antes_depois_2.JPG',
-	// 	'/images/brinde.jpeg',
-	// ];
-
 	const images = [
 		'images/bg_grid/1.jpg',
 		'images/bg_grid/2.jpg',
