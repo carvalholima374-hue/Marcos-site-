@@ -41,7 +41,7 @@
                     class={[
                         "inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-bg-secondary",
                         "mb-8 text-center",
-                    ].join(" ")}
+                    ]}
                 >
                     <span
                         class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"
@@ -87,7 +87,7 @@
                             "cta-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 md:px-8",
                             "py-4 bg-accent text-bg-primary font-semibold text-base rounded-sm transition-all",
                             "duration-200 hover:bg-accent-hover hover:scale-[1.02] active:scale-100",
-                        ].join(" ")}
+                        ]}
                     >
                         Agendar avaliação gratuita
                         <ArrowRight size={16} />
@@ -104,16 +104,18 @@
                 use:reveal={{ delay: 150 }}
                 class={[
                     "order-first lg:order-last w-fit mask-x-from-transparent mask-x-to-black mask-x-to-5%",
-                    "mask-y-from-transparent mask-y-to-black mask-y-to-5% animate-[scale_2s_ease-in-out_infinite_alternate]",
-                ].join(" ")}
+                    "mask-y-from-transparent mask-y-to-black mask-y-to-5% animate-[herophoto_2s_ease-in-out_infinite_alternate]",
+                ]}
             >
                 <div
                     class="relative w-full max-w-sm mx-auto lg:max-w-none overflow-hidden rounded-sm"
                 >
                     <img
                         src="images/bg_image_5.png"
-                        alt="Resultado de prótese capilar"
+                        alt="Resultado de prótese capilar aplicada por Marcos em Santo André/SP"
                         class="w-full h-full object-cover shadow-2xl"
+                        fetchpriority="high"
+                        loading="eager"
                     />
                     <!-- Edge fade: top -->
                     <!-- <div class="absolute inset-x-0 top-0 h-20 pointer-events-none"

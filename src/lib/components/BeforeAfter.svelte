@@ -163,10 +163,10 @@
                                 >
                                     <img
                                         {src}
-                                        alt="Transformação antes e depois {i +
-                                            1}"
+                                        alt="Transformação antes e depois com prótese capilar — resultado {i + 1}"
                                         class="w-full h-full object-cover rounded-sm select-none"
                                         draggable="false"
+                                        loading="lazy"
                                     />
                                 </button>
                             </div>
@@ -202,8 +202,7 @@
                         aria-label="Ir para foto {i + 1}"
                         class={[
                             "w-2 h-2 rounded-full transition-colors duration-200",
-                            selectedIndex === i && "bg-accent",
-                            selectedIndex !== i && "bg-bg-subtle",
+                            selectedIndex === i ? "bg-accent" : "bg-bg-subtle",
                         ]}
                     ></button>
                 {/each}
