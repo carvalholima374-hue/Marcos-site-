@@ -17,7 +17,7 @@ env:
     PUBLIC_WHATSAPP_NUMBER: 5511913294336
     PUBLIC_WHATSAPP_MESSAGE: "Olá, vim pelo site e gostaria de agendar uma avaliação gratuita!"
     PUBLIC_BUSINESS_NAME: "Marcos Prótese Capilar"
-    PUBLIC_ADDRESS: "Rua das Figueiras, 2131, Campestre, Santo André SP"
+    PUBLIC_SITE_URL: "https://marcosprotesecapilar.com.br"
 
 jobs:
   deploy:
