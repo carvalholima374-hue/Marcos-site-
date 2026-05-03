@@ -1,6 +1,10 @@
 <script lang="ts">
     import "../app.css";
-    import { PUBLIC_BUSINESS_NAME, PUBLIC_SITE_URL, PUBLIC_WHATSAPP_NUMBER } from "$env/static/public";
+    import {
+        PUBLIC_BUSINESS_NAME,
+        PUBLIC_SITE_URL,
+        PUBLIC_WHATSAPP_NUMBER,
+    } from "$env/static/public";
 
     let { children } = $props();
 
@@ -130,14 +134,20 @@
     />
     <meta name="author" content="Marcos Prótese Capilar" />
     <meta name="robots" content="index, follow" />
-
+    <meta
+        name="google-site-verification"
+        content="zEwmTOqYovzuQqlaOYODeq5drOSJ-vlgGhs-CC3h60w"
+    />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:alt" content="Resultado de prótese capilar — Marcos Prótese Capilar" />
+    <meta
+        property="og:image:alt"
+        content="Resultado de prótese capilar — Marcos Prótese Capilar"
+    />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content={PUBLIC_BUSINESS_NAME} />
 
@@ -146,7 +156,10 @@
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content="Resultado de prótese capilar — Marcos Prótese Capilar" />
+    <meta
+        name="twitter:image:alt"
+        content="Resultado de prótese capilar — Marcos Prótese Capilar"
+    />
 
     <!-- Structured data: LocalBusiness -->
     {@html `<script type="application/ld+json">${JSON.stringify(jsonLdBusiness)}</script>`}
