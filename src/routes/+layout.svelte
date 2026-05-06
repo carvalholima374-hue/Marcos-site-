@@ -9,6 +9,29 @@
 
     let { children } = $props();
 
+    let bottomOffset = $state(24); // default: bottom-16 = 4rem = 64px
+
+    $effect(() => {
+        function updateButtonPosition() {
+            const footer = document.querySelector("footer");
+            if (!footer) return;
+
+            const footerTop = footer.getBoundingClientRect().top;
+            const viewportHeight = window.innerHeight;
+
+            if (footerTop < viewportHeight) {
+                bottomOffset = Math.max(24, viewportHeight - footerTop + 8);
+            } else {
+                bottomOffset = 24;
+            }
+        }
+
+        window.addEventListener("scroll", updateButtonPosition, { passive: true });
+        updateButtonPosition();
+
+        return () => window.removeEventListener("scroll", updateButtonPosition);
+    });
+
     const siteUrl = PUBLIC_SITE_URL;
     const title = `${PUBLIC_BUSINESS_NAME} — Prótese Capilar em Santo André/SP`;
     const description =
@@ -129,8 +152,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="/favicon-192x192.png"
+    />
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="/favicon-512x512.png"
+    />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="canonical" href={siteUrl} />
 
@@ -183,10 +216,13 @@
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Falar no WhatsApp"
-    class="whatsapp-fab fixed bottom-6 left-6 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-white shadow-lg shadow-black/40 transition-transform duration-200 hover:scale-105 hover:bg-[#1ebe5d] sm:px-4 sm:py-3 max-sm:p-3.5"
+    style="bottom: {bottomOffset}px"
+    class="fixed left-6 z-50 flex items-center gap-2"
 >
-    <WhatsAppIcon size={24} color="white" />
-    <span class="text-sm font-semibold leading-none max-sm:hidden">WhatsApp</span>
+    <div class="whatsapp-fab flex items-center rounded-full p-3 bg-[#25D366] text-white shadow-lg shadow-black/40 hover:bg-[#1ebe5d] hover:scale-105 transition-transform duration-200">
+        <WhatsAppIcon size={24} color="white" />
+    </div>
+    <span class="bg-white rounded-md py-2 px-4 text-black text-sm font-body font-semibold">Gostou? Fale Conosco</span>
 </a>
 
 <style>
@@ -195,12 +231,30 @@
      * Infinite + duração longa = "de vez em quando" sem JS.
      */
     @keyframes wa-pulse {
-        0%   { transform: scale(1);    box-shadow: 0 0 0 0   rgba(37,211,102,0.55); }
-        5%   { transform: scale(1.1);  box-shadow: 0 0 0 10px rgba(37,211,102,0);   }
-        10%  { transform: scale(1);    box-shadow: 0 0 0 0   rgba(37,211,102,0.55); }
-        15%  { transform: scale(1.1);  box-shadow: 0 0 0 10px rgba(37,211,102,0);   }
-        20%  { transform: scale(1);    box-shadow: 0 0 0 0   rgba(37,211,102,0);    }
-        100% { transform: scale(1);    box-shadow: 0 0 0 0   rgba(37,211,102,0);    }
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+        }
+        5% {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+        }
+        10% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+        }
+        15% {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+        }
+        20% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
     }
 
     @media (prefers-reduced-motion: no-preference) {
