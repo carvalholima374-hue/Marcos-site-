@@ -1,5 +1,6 @@
 <script lang="ts">
     import "../app.css";
+    import WhatsAppIcon from "$lib/icons/WhatsAppIcon.svelte";
     import {
         PUBLIC_BUSINESS_NAME,
         PUBLIC_SITE_URL,
@@ -123,7 +124,14 @@
 
 <svelte:head>
     <title>{title}</title>
-    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="canonical" href={siteUrl} />
 
     <!-- Primary meta -->
@@ -169,3 +177,36 @@
 </svelte:head>
 
 {@render children()}
+
+<a
+    href="https://wa.me/{PUBLIC_WHATSAPP_NUMBER}?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20prótese%20capilar."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+    class="whatsapp-fab fixed bottom-6 left-6 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-white shadow-lg shadow-black/40 transition-transform duration-200 hover:scale-105 hover:bg-[#1ebe5d] sm:px-4 sm:py-3 max-sm:p-3.5"
+>
+    <WhatsAppIcon size={24} color="white" />
+    <span class="text-sm font-semibold leading-none max-sm:hidden">WhatsApp</span>
+</a>
+
+<style>
+    /*
+     * Ciclo de 10s: pulsa 2x nos primeiros ~15% e fica parado o resto.
+     * Infinite + duração longa = "de vez em quando" sem JS.
+     */
+    @keyframes wa-pulse {
+        0%   { transform: scale(1);    box-shadow: 0 0 0 0   rgba(37,211,102,0.55); }
+        5%   { transform: scale(1.1);  box-shadow: 0 0 0 10px rgba(37,211,102,0);   }
+        10%  { transform: scale(1);    box-shadow: 0 0 0 0   rgba(37,211,102,0.55); }
+        15%  { transform: scale(1.1);  box-shadow: 0 0 0 10px rgba(37,211,102,0);   }
+        20%  { transform: scale(1);    box-shadow: 0 0 0 0   rgba(37,211,102,0);    }
+        100% { transform: scale(1);    box-shadow: 0 0 0 0   rgba(37,211,102,0);    }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .whatsapp-fab {
+            animation: wa-pulse 10s ease-in-out infinite;
+            animation-delay: 3s;
+        }
+    }
+</style>
