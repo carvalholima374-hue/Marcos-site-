@@ -36,7 +36,7 @@
     const title = `${PUBLIC_BUSINESS_NAME} — Prótese Capilar em Santo André/SP`;
     const description =
         "Especialista em prótese capilar 100% natural em Santo André/SP. Sem cirurgia, sem dor, resultado no mesmo dia. Pioneiro na cidade. Agende sua avaliação gratuita.";
-    const ogImage = `${siteUrl}/images/bg_image_5.png`;
+    const ogImage = `${siteUrl}/images/marcos_profile.jpeg`;
 
     const jsonLdBusiness = {
         "@context": "https://schema.org",
