@@ -4,17 +4,34 @@
 
     const testimonials = [
         {
-            name: "Carlos E.",
+            name: "Julio Zirondi",
             location: "Santo André, SP",
-            text: `O Marcos é muito atencioso, explicou tudo antes de começar. Me sinto muito mais confiante no 
-            trabalho e nos relacionamentos.`,
+            text: `Fiz minha prótese e deu tudo certo. Hoje estou parecendo o Leonardo DiCaprio em Titanic`,
             rating: 5,
         },
         {
-            name: "Ricardo M.",
+            name: "Domingo Andrade",
             location: "Santo André, SP",
-            text: `Em menos de 3 horas minha vida mudou. Minha esposa não acreditou quando me viu, achou que eu tinha 
-            feito transplante.`,
+            text: `Próteses excelentes com muita naturalidade. Pode confirmar`,
+            rating: 5,
+        },
+        {
+            name: "Igor Werneck",
+            location: "Santo André, SP",
+            text: `Já corto o meu cabelo aqui há anos e não mudo por nada. O clima é bom, o ambiente é aconchegante e 
+            o tratamento que o cabeleireiro Marcos entrega, eu nunca vi igual. Recomendo para à todos!`,
+            rating: 5,
+        },
+        {
+            name: "Raoni Martins",
+            location: "Santo André, SP",
+            text: `Marcos Carvalho é um excelente profissional!
+            Barbeiro, visagista e protesista, está sempre em busca de novos conhecimentos para oferecer a melhor experiência aos seus clientes.
+
+            Muito solícito, dedicado e comprometido com a excelência em cada atendimento.
+            Se você procura qualidade, atenção aos detalhes e um serviço diferenciado, pode confiar!
+
+            Super recomendo!`,
             rating: 5,
         },
     ];
