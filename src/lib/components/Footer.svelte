@@ -26,7 +26,7 @@
             >
                 <!-- Instagram -->
                 <a
-                    href="https://www.instagram.com/marcos_protesecapilar/"
+                    href="https://www.instagram.com/marcos.protesecapilar/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram do Marcos Prótese Capilar"
