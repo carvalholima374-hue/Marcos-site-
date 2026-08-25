@@ -1,19 +1,35 @@
 <script lang="ts">
     import { getWhatsAppURL } from "$lib/stores/whatsapp";
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import HeroGrid from "./HeroGrid.svelte";
     import { ArrowRight } from "lucide-svelte";
 
     const waURL = getWhatsAppURL();
 
     let heroVisible = $state(false);
+    let activeImage = $state(1);
+    let timer: ReturnType<typeof setInterval>;
+
+    const images = [
+        "images/bg_image_5.png",
+        "images/bg_image_6.png",
+        "images/bg_image_7.png",
+    ];
 
     onMount(() => {
+        timer = setInterval(() => {
+            activeImage = activeImage === images.length ? 1 : activeImage + 1;
+        }, 8000);
+
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 heroVisible = true;
             });
         });
+    });
+
+    onDestroy(() => {
+        clearInterval(timer);
     });
 </script>
 
@@ -23,7 +39,6 @@
 >
     <HeroGrid />
 
-    <!-- Subtle horizontal line accent -->
     <div
         class="bg-accent absolute top-0 right-0 left-0 h-px opacity-40"
         aria-hidden="true"
@@ -41,12 +56,8 @@
                     ? 'translate-y-0 opacity-100'
                     : 'translate-y-5 opacity-0'}"
             >
-                <!-- Badge -->
                 <div
-                    class={[
-                        "border-border bg-bg-secondary inline-flex items-center gap-2 rounded-full border px-3 py-1.5",
-                        "mb-8 text-center",
-                    ]}
+                    class="border-border bg-bg-secondary mb-8 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-center"
                 >
                     <span
                         class="bg-accent h-1.5 w-1.5 shrink-0 rounded-full"
@@ -61,19 +72,14 @@
                     </span>
                 </div>
 
-                <!-- H1 -->
                 <h1
-                    class={[
-                        "font-display text-text-primary text-5xl leading-tight font-bold lg:text-6xl xl:text-7xl",
-                        " mb-6 text-center",
-                    ].join(" ")}
+                    class="font-display text-text-primary mb-6 text-center text-5xl leading-tight font-bold lg:text-6xl xl:text-7xl"
                     style="font-family: 'Playfair Display', Georgia, serif;"
                 >
                     Recupere seu<br />cabelo e sua<br />
                     <em class="text-accent not-italic">confiança.</em>
                 </h1>
 
-                <!-- Subtitle -->
                 <p
                     class="text-text-secondary mb-10 max-w-md text-center text-lg leading-relaxed lg:text-xl"
                 >
@@ -81,18 +87,13 @@
                     resultado no mesmo dia.
                 </p>
 
-                <!-- CTA -->
                 <div class="flex flex-col items-start gap-4 sm:flex-row">
                     <a
                         href={waURL}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Agendar avaliação gratuita pelo WhatsApp"
-                        class={[
-                            "cta-btn inline-flex w-full items-center justify-center gap-2 px-4 sm:w-auto md:px-8",
-                            "bg-accent text-bg-primary rounded-sm py-4 text-base font-semibold transition-all",
-                            "hover:bg-accent-hover duration-200 hover:scale-[1.02] active:scale-100",
-                        ]}
+                        class="cta-btn bg-accent text-bg-primary hover:bg-accent-hover inline-flex w-full items-center justify-center gap-2 rounded-sm px-4 py-4 text-base font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-100 sm:w-auto md:px-8"
                     >
                         Agendar avaliação gratuita
                         <ArrowRight size={16} />
@@ -104,24 +105,26 @@
                 </p>
             </div>
 
-            <!-- Right: photo -->
+            <!-- Right: photo slider -->
             <div
-                class={[
-                    "order-first w-fit mask-x-from-transparent mask-x-to-black mask-x-to-5% lg:order-last",
-                    "animate-[herophoto_2s_ease-in-out_infinite_alternate] mask-y-from-transparent mask-y-to-black",
-                    "mask-y-to-5% transition-transform duration-500",
-                ]}
+                class="order-first w-full animate-[herophoto_2s_ease-in-out_infinite_alternate] mask-y-from-transparent mask-y-to-black mask-y-to-5% mask-x-from-transparent mask-x-to-black mask-x-to-5% transition-transform duration-500 lg:order-last"
             >
+                <!-- O segredo do layout está aqui: 'aspect-[3/4]' entre colchetes no Tailwind v3/v4 -->
                 <div
-                    class="relative mx-auto w-full max-w-sm overflow-hidden rounded-sm lg:max-w-none"
+                    class="relative mx-auto aspect-3/4 w-full max-w-sm overflow-hidden rounded-sm lg:max-w-none"
                 >
-                    <img
-                        src="images/bg_image_5.png"
-                        alt="Resultado de prótese capilar aplicada por Marcos em Santo André/SP"
-                        class="h-full w-full object-cover shadow-2xl"
-                        fetchpriority="high"
-                        loading="eager"
-                    />
+                    {#each images as img, index}
+                        <img
+                            src={img}
+                            alt="Resultado de prótese capilar aplicada por Marcos em Santo André/SP"
+                            class="absolute inset-0 h-full w-full object-cover shadow-2xl transition-opacity duration-1000 {activeImage ===
+                            index + 1
+                                ? 'z-10 opacity-100'
+                                : 'z-0 opacity-0'}"
+                            fetchpriority={index === 0 ? "high" : "low"}
+                            loading="eager"
+                        />
+                    {/each}
                 </div>
             </div>
         </div>

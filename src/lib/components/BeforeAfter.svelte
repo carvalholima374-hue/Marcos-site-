@@ -8,7 +8,15 @@
 
     const waURL = getWhatsAppURL();
 
-    const photos = ["images/antes_depois_1.JPG", "images/antes_depois_2.JPG"];
+    const photos = [
+        "images/antes_depois_1.JPG",
+        "images/antes_depois_2.JPG",
+        "images/antes_depois_3.PNG",
+        "images/antes_depois_4.PNG",
+        "images/antes_depois_5.PNG",
+        "images/antes_depois_6.PNG",
+        "images/antes_depois_7.PNG",
+    ];
 
     let emblaNode: HTMLElement;
     let embla: ReturnType<typeof EmblaCarousel> | null = null;
@@ -84,13 +92,11 @@
             secondaryZoomLevel: 2,
         });
 
-        // Track the last index navigated inside PhotoSwipe
         let lastIndex = startIndex;
         pswp.on("change", () => {
             lastIndex = pswp.currIndex;
         });
 
-        // Sync Embla only when PhotoSwipe closes, avoiding mid-animation state conflicts
         pswp.on("destroy", () => {
             scrollTo(lastIndex);
         });
@@ -103,11 +109,11 @@
     class="bg-bg-primary py-20 lg:py-24"
     aria-label="Transformações antes e depois"
 >
-    <div class="max-w-6xl mx-auto px-6">
+    <div class="mx-auto max-w-6xl px-6">
         <div class="flex flex-col items-center">
             <div use:reveal class="mb-2">
                 <h2
-                    class="font-display text-3xl lg:text-4xl font-bold text-text-primary mb-2"
+                    class="font-display text-text-primary mb-2 text-3xl font-bold lg:text-4xl"
                 >
                     Transformações
                 </h2>
@@ -120,41 +126,38 @@
             </div>
         </div>
 
-        <!-- Carousel -->
         <div class="mb-10">
             <div
                 use:reveal
                 class="relative flex items-center justify-center gap-4"
             >
-                <!-- Prev arrow — hidden on mobile -->
                 <button
                     type="button"
                     onclick={scrollPrev}
                     disabled={!canScrollPrev}
                     aria-label="Foto anterior"
                     class={[
-                        "sm:flex shrink-0 w-10 h-10 items-center hidden justify-center rounded-full border",
+                        "hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border sm:flex",
                         "transition-colors duration-200",
                         canScrollNext
                             ? "border-border-secondary text-text-secondary hover:text-accent hover:border-accent"
-                            : "border-border text-[#3A3A3A] cursor-not-allowed",
+                            : "border-border cursor-not-allowed text-[#3A3A3A]",
                     ]}
                 >
                     <ChevronLeft size={18} />
                 </button>
 
-                <!-- Embla viewport -->
                 <div
                     bind:this={emblaNode}
-                    class="max-w-200 embla-viewport overflow-hidden w-full"
+                    class="embla-viewport w-full max-w-200 overflow-hidden"
                 >
                     <div class="embla-container flex">
                         {#each photos as src, i}
-                            <div class="embla-slide flex-[0_0_100%] min-w-0">
+                            <div class="embla-slide min-w-0 flex-[0_0_100%]">
                                 <button
                                     type="button"
                                     class={[
-                                        "w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2",
+                                        "block w-full cursor-zoom-in focus:outline-none focus-visible:ring-2",
                                         "focus-visible:ring-accent rounded-sm",
                                     ]}
                                     aria-label="Ampliar foto {i + 1}"
@@ -163,8 +166,9 @@
                                 >
                                     <img
                                         {src}
-                                        alt="Transformação antes e depois com prótese capilar — resultado {i + 1}"
-                                        class="w-full h-full object-cover rounded-sm select-none"
+                                        alt="Transformação antes e depois com prótese capilar — resultado {i +
+                                            1}"
+                                        class="h-full w-full rounded-sm object-contain select-none"
                                         draggable="false"
                                         loading="lazy"
                                     />
@@ -181,12 +185,12 @@
                     disabled={!canScrollNext}
                     aria-label="Próxima foto"
                     class={[
-                        "hidden sm:flex shrink-0 w-10 h-10 items-center justify-center rounded-full border",
+                        "hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border sm:flex",
                         "transition-colors duration-200",
                         canScrollNext &&
                             "border-border-secondary text-text-secondary hover:text-accent hover:border-accent",
                         !canScrollNext &&
-                            "border-border text-[#3A3A3A] cursor-not-allowed",
+                            "border-border cursor-not-allowed text-[#3A3A3A]",
                     ]}
                 >
                     <ChevronRight size={18} />
@@ -194,14 +198,14 @@
             </div>
 
             <!-- Dots -->
-            <div class="flex justify-center gap-2 mt-4">
+            <div class="mt-4 flex justify-center gap-2">
                 {#each photos as _, i}
                     <button
                         type="button"
                         onclick={() => scrollTo(i)}
                         aria-label="Ir para foto {i + 1}"
                         class={[
-                            "w-2 h-2 rounded-full transition-colors duration-200",
+                            "h-2 w-2 rounded-full transition-colors duration-200",
                             selectedIndex === i ? "bg-accent" : "bg-bg-subtle",
                         ]}
                     ></button>
@@ -217,8 +221,8 @@
                 rel="noopener noreferrer"
                 aria-label="Ver mais resultados pelo WhatsApp"
                 class={[
-                    "inline-flex items-center gap-2 text-accent hover:text-accent-hover text-sm font-medium",
-                    "transition-colors duration-200 border-b border-accent hover:border-accent-hover pb-0.5",
+                    "text-accent hover:text-accent-hover inline-flex items-center gap-2 text-sm font-medium",
+                    "border-accent hover:border-accent-hover border-b pb-0.5 transition-colors duration-200",
                 ]}
             >
                 Quer ver mais resultados? Fale com a gente
