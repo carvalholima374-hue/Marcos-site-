@@ -18,8 +18,8 @@
         },
         {
             q: "Quanto tempo dura?",
-            a: `Com os cuidados adequados, uma prótese capilar dura em média de 3 a 6 meses antes de precisar de
-            manutenção ou substituição.`,
+            a: `Em média de 8 meses a 1 ano. Com os cuidados e manutenções adequados, a prótese pode chegar a 1 ano e meio
+            ou até mais. A durabilidade varia de acordo com os cuidados e a rotina de cada cliente.`,
         },
         {
             q: "Posso molhar, ir à academia?",
